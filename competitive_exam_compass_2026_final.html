@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A structured student guidance draft for BSc, BA, BCom, BE and BTech graduates on Tamil Nadu State and All India competitive examinations.">
+<title>Competitive Exam Compass — Graduate Edition 2026</title>
+<style>
+  :root {
+    --gold: #C9A84C;
+    --deep: #0D1B2A;
+    --ink: #1A1A2E;
+    --cream: #FAF6EE;
+    --rust: #B5451B;
+    --teal: #1B6CA8;
+    --leaf: #2D6A4F;
+    --violet: #5E4A8B;
+    --warm: #F4E8D0;
+    --line: rgba(201,168,76,0.3);
+    --glass: rgba(255,255,255,0.04);
+  }
+  html { scroll-behavior: smooth; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--deep);
+    color: var(--cream);
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    padding: 60px 24px 40px;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 90% 80%, rgba(30,108,168,0.1) 0%, transparent 60%),
+      linear-gradient(180deg, #070E19 0%, #0D1B2A 60%, #0A1520 100%);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(201,168,76,0.04) 50px),
+      repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(201,168,76,0.04) 50px);
+    pointer-events: none;
+  }
+
+  .emblem {
+    width: 90px; height: 90px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px;
+    margin: 0 auto 28px;
+    background: radial-gradient(circle, rgba(201,168,76,0.1), transparent);
+    animation: pulse 3s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.3); }
+    50% { box-shadow: 0 0 0 16px rgba(201,168,76,0); }
+  }
+
+  .hero-label {
+    font-family: monospace;
+    font-size: 11px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    opacity: 0.85;
+  }
+
+  .hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(2.4rem, 7vw, 5.2rem);
+    font-weight: 900;
+    line-height: 1.1;
+    color: #fff;
+    text-shadow: 0 2px 40px rgba(201,168,76,0.2);
+    margin-bottom: 10px;
+  }
+  .hero h1 span { color: var(--gold); }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: rgba(250,246,238,0.65);
+    max-width: 680px;
+    margin: 18px auto 0;
+    font-weight: 300;
+  }
+  .hero-tamil {
+    font-family: 'Noto Serif Tamil', Georgia, serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    opacity: 0.8;
+    margin-top: 10px;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 48px;
+  }
+  .stat { text-align: center; }
+  .stat-n {
+    font-family: Georgia, serif;
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-l {
+    font-size: 0.72rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(250,246,238,0.5);
+    margin-top: 4px;
+  }
+
+  /* ── NAV ── */
+  .nav-bar {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,20,32,0.92);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--line);
+    padding: 0 20px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-bar::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    background: none; border: none;
+    color: rgba(250,246,238,0.6);
+    font-family: Arial, sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    padding: 14px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+  }
+  .nav-btn:hover, .nav-btn.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+
+  /* ── SEARCH / FILTER CONTROLS ── */
+  .exam-tools {
+    background: rgba(10,20,32,0.96);
+    border-bottom: 1px solid var(--line);
+    padding: 14px 24px 16px;
+  }
+  .exam-tools-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    gap: 10px;
+  }
+  .exam-search {
+    width: 100%;
+    border: 1px solid var(--line);
+    background: rgba(255,255,255,0.04);
+    color: var(--cream);
+    border-radius: 4px;
+    padding: 11px 14px;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+  }
+  .exam-search::placeholder { color: rgba(250,246,238,0.45); }
+  .filter-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .filter-chip {
+    border: 1px solid rgba(201,168,76,0.35);
+    background: rgba(201,168,76,0.08);
+    color: rgba(250,246,238,0.78);
+    border-radius: 999px;
+    padding: 6px 11px;
+    font-family: Arial, sans-serif;
+    font-size: 0.74rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-chip:hover,
+  .filter-chip.active {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(201,168,76,0.14);
+  }
+  .exam-meta {
+    margin: -6px 24px 14px 88px;
+    font-size: 0.72rem;
+    color: rgba(250,246,238,0.52);
+    letter-spacing: 0.2px;
+  }
+  .exam-meta span { color: rgba(201,168,76,0.9); }
+  .no-results {
+    display: none;
+    border: 1px solid var(--line);
+    color: rgba(250,246,238,0.65);
+    padding: 18px 20px;
+    margin-top: 18px;
+    font-size: 0.9rem;
+    background: rgba(255,255,255,0.025);
+  }
+  @media(max-width:700px){
+    .exam-tools { padding: 12px 16px; }
+    .exam-meta { margin: -4px 24px 14px 24px; }
+  }
+
+  /* ── SECTIONS ── */
+  .section { padding: 80px 0; }
+  .section:nth-child(even) { background: rgba(255,255,255,0.015); }
+
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  .section-head {
+    margin-bottom: 48px;
+  }
+  .section-eyebrow {
+    font-family: monospace;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .section-head h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: #fff;
+  }
+  .section-head p {
+    color: rgba(250,246,238,0.6);
+    max-width: 640px;
+    margin-top: 10px;
+    font-weight: 300;
+  }
+  .gold-line {
+    width: 60px; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    margin: 16px 0 0;
+  }
+
+  /* ── INTRO PANEL ── */
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+  @media(max-width:700px){ .intro-grid { grid-template-columns: 1fr; } }
+  .intro-card {
+    background: var(--glass);
+    border: 1px solid var(--line);
+    padding: 32px;
+  }
+  .intro-card h3 {
+    font-family: Georgia, serif;
+    font-size: 1.15rem;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+  .intro-card p, .intro-card li {
+    color: rgba(250,246,238,0.75);
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+  .intro-card ul { padding-left: 18px; }
+
+  /* ── EXAM CARDS ── */
+  .exam-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  .exam-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+    cursor: pointer;
+  }
+  .exam-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+  }
+  .exam-card-header {
+    padding: 22px 24px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .exam-icon {
+    width: 48px; height: 48px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .exam-title { flex: 1; }
+  .exam-title h3 {
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    color: #fff;
+    line-height: 1.3;
+  }
+  .exam-short {
+    font-family: monospace;
+    font-size: 0.72rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+  }
+  .exam-body { padding: 0 24px 24px; }
+  .exam-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+    align-items: flex-start;
+    font-size: 0.82rem;
+  }
+  .exam-row-label {
+    color: rgba(201,168,76,0.8);
+    min-width: 90px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.3px;
+    padding-top: 1px;
+  }
+  .exam-row-val {
+    color: rgba(250,246,238,0.75);
+    flex: 1;
+  }
+  .exam-row-val a {
+    color: #6bb3f7;
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .exam-row-val a:hover { text-decoration: underline; }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 3px 9px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    margin: 2px 2px 2px 0;
+  }
+  .tag-tn { background: rgba(181,69,27,0.25); color: #F08060; border: 1px solid rgba(181,69,27,0.4); }
+  .tag-ai { background: rgba(27,108,168,0.25); color: #6BAEE8; border: 1px solid rgba(27,108,168,0.4); }
+  .tag-sci { background: rgba(45,106,79,0.25); color: #5FBFA0; border: 1px solid rgba(45,106,79,0.4); }
+  .tag-com { background: rgba(94,74,139,0.25); color: #B09CE0; border: 1px solid rgba(94,74,139,0.4); }
+  .tag-arts { background: rgba(180,130,40,0.25); color: #E8C76A; border: 1px solid rgba(180,130,40,0.4); }
+  .tag-eng { background: rgba(40,150,160,0.2); color: #7DE0E8; border: 1px solid rgba(40,150,160,0.4); }
+
+  .divider { height: 1px; background: var(--line); margin: 12px 0; }
+
+  /* ── TIMELINE / EXAM CALENDAR ── */
+  .month-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  @media(max-width:800px){ .month-grid { grid-template-columns: repeat(2,1fr); } }
+  @media(max-width:480px){ .month-grid { grid-template-columns: 1fr; } }
+
+  .month-box {
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .month-hdr {
+    padding: 10px 16px;
+    background: rgba(201,168,76,0.1);
+    font-family: monospace;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .month-body { padding: 12px 16px; }
+  .month-item {
+    font-size: 0.78rem;
+    color: rgba(250,246,238,0.75);
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .month-item:last-child { border-bottom: none; }
+  .month-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  /* ── STRATEGY TABLE ── */
+  .strategy-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.84rem;
+  }
+  .strategy-table th {
+    background: rgba(201,168,76,0.12);
+    color: var(--gold);
+    font-family: monospace;
+    font-size: 0.72rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 12px 16px;
+    text-align: left;
+    border: 1px solid var(--line);
+  }
+  .strategy-table td {
+    padding: 12px 16px;
+    border: 1px solid rgba(255,255,255,0.05);
+    color: rgba(250,246,238,0.8);
+    vertical-align: top;
+  }
+  .strategy-table tr:hover td { background: rgba(201,168,76,0.04); }
+  .strategy-table strong { color: #fff; }
+
+  /* ── PREPARATION TIPS ── */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+  .tip-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 24px;
+  }
+  .tip-number {
+    font-family: Georgia, serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(201,168,76,0.15);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .tip-card h4 {
+    color: var(--gold);
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .tip-card p {
+    color: rgba(250,246,238,0.65);
+    font-size: 0.82rem;
+    line-height: 1.7;
+  }
+
+  /* ── CAREER MAP ── */
+  .career-paths {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .path-card {
+    border-radius: 4px;
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .path-icon { font-size: 2.2rem; margin-bottom: 12px; }
+  .path-card h4 {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .path-card p {
+    font-size: 0.76rem;
+    color: rgba(250,246,238,0.6);
+    line-height: 1.6;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #070E19;
+    border-top: 1px solid var(--line);
+    padding: 48px 24px;
+    text-align: center;
+  }
+  footer .foot-title {
+    font-family: Georgia, serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  footer p {
+    color: rgba(250,246,238,0.4);
+    font-size: 0.8rem;
+    margin-bottom: 4px;
+  }
+  footer .disclaimer {
+    max-width: 660px;
+    margin: 20px auto 0;
+    font-size: 0.74rem;
+    color: rgba(250,246,238,0.3);
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+    line-height: 1.7;
+  }
+
+  /* colour accents per category */
+  .c-tn { border-top: 3px solid var(--rust); }
+  .c-ai { border-top: 3px solid var(--teal); }
+  .c-sci { border-top: 3px solid var(--leaf); }
+  .c-com { border-top: 3px solid var(--violet); }
+  .c-def { border-top: 3px solid #8B6914; }
+
+  .i-tn { background: rgba(181,69,27,0.15); color: #F08060; }
+  .i-ai { background: rgba(27,108,168,0.15); color: #6BAEE8; }
+  .i-sci { background: rgba(45,106,79,0.15); color: #5FBFA0; }
+  .i-com { background: rgba(94,74,139,0.15); color: #B09CE0; }
+  .i-def { background: rgba(139,105,20,0.2); color: #D4A84B; }
+
+  .big-quote {
+    font-family: Georgia, serif;
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    font-style: italic;
+    color: rgba(250,246,238,0.7);
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+    position: relative;
+  }
+  .big-quote::before {
+    content: '"';
+    font-size: 5rem;
+    color: rgba(201,168,76,0.2);
+    position: absolute;
+    top: -24px; left: -10px;
+    line-height: 1;
+  }
+
+  .alert-box {
+    background: rgba(181,69,27,0.1);
+    border: 1px solid rgba(181,69,27,0.3);
+    border-radius: 4px;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    font-size: 0.84rem;
+    color: rgba(250,246,238,0.75);
+  }
+  .alert-box strong { color: #F08060; }
+
+  .scroll-top {
+    position: fixed;
+    bottom: 28px; right: 28px;
+    width: 44px; height: 44px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: var(--deep);
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+    transition: opacity 0.3s;
+    z-index: 200;
+  }
+
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+  .nav-btn:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: -2px;
+  }
+
+  /* print-friendly band */
+  @page { margin: 12mm; }
+  @media print {
+    .nav-bar, .scroll-top, .exam-tools { display: none; }
+    body { background: #fff; color: #000; }
+    .exam-card, .intro-card, .tip-card, .month-box, .path-card {
+      background: #fff !important;
+      border: 1px solid #ccc !important;
+      color: #000 !important;
+      page-break-inside: avoid;
+    }
+    .exam-row-label { color: #555 !important; }
+    .exam-row-val { color: #000 !important; }
+    .exam-title h3, .section-head h2 { color: #000 !important; }
+    .exam-short { color: #8B6914 !important; }
+    .section { page-break-before: auto; }
+    a { color: #000 !important; text-decoration: none !important; }
+    a[href]::after { content: ""; }
+  }
+  /* Engineering card border — was missing, caused unstyled cards */
+  .c-eng { border-top: 3px solid #2896A0; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="emblem">🎓</div>
+  <p class="hero-label">Preliminary Guidance Draft · 2026 Edition · Verify Official Notifications Before Applying</p>
+  <h1>Competitive Exam<br><span>Compass</span></h1>
+  <p class="hero-sub">A structured reference guide for graduates — BSc · BA · BCom · BE · BTech — navigating Tamil Nadu State & All India competitive examinations.</p>
+  <p class="hero-tamil" lang="ta">தமிழ்நாடு மாநில மற்றும் தேசிய அளவிலான போட்டித் தேர்வுகள் — முழுமையான வழிகாட்டி</p>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-n">40+</div><div class="stat-l">Exams Covered</div></div>
+    <div class="stat"><div class="stat-n">5</div><div class="stat-l">Degree Streams</div></div>
+    <div class="stat"><div class="stat-n">2</div><div class="stat-l">Levels: TN & All India</div></div>
+    <div class="stat"><div class="stat-n">12</div><div class="stat-l">Career Domains</div></div>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<div style="background:rgba(181,69,27,0.15);border-bottom:1px solid rgba(181,69,27,0.4);padding:10px 24px;text-align:center;font-size:0.8rem;color:#F08060;">
+  ⚠ <strong>Student Guidance Draft · 2026</strong> — All dates, eligibility, salary, and syllabus details should be verified from official notifications before applying. Last updated: May 2026.
+</div>
+<nav class="nav-bar" id="mainNav" role="navigation" aria-label="Exam sections navigation">
+  <button class="nav-btn active" aria-label="Go to Introduction section" onclick="scrollToSection(event,'intro')">Introduction</button>
+  <button class="nav-btn" aria-label="Go to Tamil Nadu Exams section" onclick="scrollToSection(event,'tn-exams')">Tamil Nadu Exams</button>
+  <button class="nav-btn" aria-label="Go to All India Civil Services section" onclick="scrollToSection(event,'ai-civil')">All India Civil</button>
+  <button class="nav-btn" aria-label="Go to Banking and Finance Exams section" onclick="scrollToSection(event,'ai-banking')">Banking & Finance</button>
+  <button class="nav-btn" aria-label="Go to Engineering Exams section" onclick="scrollToSection(event,'ai-eng')">Engineering (GATE)</button>
+  <button class="nav-btn" aria-label="Go to Science PG Entrance Exams section" onclick="scrollToSection(event,'ai-science')">Science PG</button>
+  <button class="nav-btn" aria-label="Go to Teaching Exams section" onclick="scrollToSection(event,'ai-teaching')">Teaching</button>
+  <button class="nav-btn" aria-label="Go to Defence Exams section" onclick="scrollToSection(event,'ai-defence')">Defence</button>
+  <button class="nav-btn" aria-label="Go to Exam Calendar section" onclick="scrollToSection(event,'calendar')">Exam Calendar</button>
+  <button class="nav-btn" aria-label="Go to Strategy Matrix section" onclick="scrollToSection(event,'strategy')">Strategy Matrix</button>
+  <button class="nav-btn" aria-label="Go to Preparation Tips section" onclick="scrollToSection(event,'tips')">Preparation Tips</button>
+  <button class="nav-btn" aria-label="Go to Resources section" onclick="scrollToSection(event,'resources')">Resources</button>
+</nav>
+
+<div class="exam-tools" aria-label="Exam search and filters">
+  <div class="exam-tools-inner">
+    <input id="examSearch" class="exam-search" type="search" placeholder="Search exams, services, eligibility..." aria-label="Search exams, services, eligibility">
+    <div class="filter-chips" role="group" aria-label="Quick exam filters">
+      <button class="filter-chip active" type="button" data-filter="all">All</button>
+      <button class="filter-chip" type="button" data-filter="ba">BA</button>
+      <button class="filter-chip" type="button" data-filter="bsc">BSc</button>
+      <button class="filter-chip" type="button" data-filter="bcom">BCom</button>
+      <button class="filter-chip" type="button" data-filter="be-btech">BE/BTech</button>
+      <button class="filter-chip" type="button" data-filter="tamil-nadu">Tamil Nadu</button>
+      <button class="filter-chip" type="button" data-filter="all-india">All India</button>
+      <button class="filter-chip" type="button" data-filter="banking">Banking</button>
+      <button class="filter-chip" type="button" data-filter="engineering">Engineering</button>
+      <button class="filter-chip" type="button" data-filter="defence">Defence</button>
+      <button class="filter-chip" type="button" data-filter="teaching">Teaching</button>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: INTRODUCTION -->
+<div class="section" id="intro">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Chapter 01</div>
+      <h2>Purpose of This Guide</h2>
+      <div class="gold-line"></div>
+      <p>Most exam lists dump names and dates. This guide gives you a structured reference framework — syllabus DNA, strategic focus areas, eligibility clarity, and preparation planning guidance, all in one place.</p>
+    </div>
+
+    <div class="big-quote">
+      A degree opens multiple pathways; competitive examinations provide structured routes into public-sector, academic, research, banking, technical, and uniformed-service careers.
+    </div>
+
+    <div class="intro-grid">
+      <div class="intro-card">
+        <h3>🗺 How To Use This Guide</h3>
+        <ul>
+          <li>Identify your degree stream (BSc / BA / BCom / BE / BTech)</li>
+          <li>Match eligibility across Tamil Nadu and All India exams</li>
+          <li>Map the annual exam calendar to plan study timelines</li>
+          <li>Use the Strategy Matrix to prioritise based on your strengths</li>
+          <li>Follow structured preparation methods used by successful aspirants</li>
+        </ul>
+      </div>
+      <div class="intro-card">
+        <h3>📌 Important Eligibility Truths</h3>
+        <ul>
+          <li><strong>Final year students</strong> can apply for most exams before results</li>
+          <li>Age relaxation: OBC +3 yrs · SC/ST +5 yrs · PwD +10 yrs (most exams; verify notification)</li>
+          <li>Many exams have <strong>no stream restriction</strong> — open to all graduates</li>
+          <li>TNPSC exams require Tamil language proficiency (SSLC standard)</li>
+          <li>UPSC CSE attempt limits are category-specific: General/EWS: 6 attempts; OBC: 9 attempts; SC/ST: unlimited within age limit</li>
+        </ul>
+      </div>
+      <div class="intro-card">
+        <h3>🏛 Exam Classification</h3>
+        <ul>
+          <li><strong>Tamil Nadu Level:</strong> TNPSC, TRB, TNUSRB, TNPSC CES</li>
+          <li><strong>All India Civil:</strong> UPSC CSE, UPSC IFoS, SSC CGL, RRB NTPC</li>
+          <li><strong>Banking:</strong> IBPS PO/Clerk/SO, SBI PO, RBI Grade B</li>
+          <li><strong>Engineering:</strong> GATE, IES/ESE, ISRO, DRDO</li>
+          <li><strong>Science PG:</strong> IIT JAM, CSIR NET, JEST, GAT-B</li>
+          <li><strong>Teaching:</strong> UGC NET, SET, TRB PG, CTET, TET</li>
+          <li><strong>Defence:</strong> CDS, AFCAT, NCC Special Entry, Indian Navy SSC/PC Officer Entry</li>
+        </ul>
+      </div>
+      <div class="intro-card">
+        <h3>⚡ Preparation Principles Before You Begin</h3>
+        <ul>
+          <li>Preparing for overlapping examinations may improve opportunity coverage</li>
+          <li>Syllabi of SSC CGL, IBPS, TNPSC Group 2 overlap significantly</li>
+          <li>Sectional cut-offs matter as much as total score</li>
+          <li>Previous year papers are among the most important preparation resources — study them early and systematically</li>
+          <li>Negative marking exists in most exams — never guess blindly</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: TAMIL NADU EXAMS -->
+<div class="section" id="tn-exams">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Chapter 02</div>
+      <h2>Tamil Nadu State Level Exams</h2>
+      <div class="gold-line"></div>
+      <p>Exams conducted by TNPSC, TRB, TNUSRB, and other state bodies. Tamil language eligibility and reservation rules vary by post — always verify the specific notification. Tamil language proficiency (SSLC standard) is required for most posts.</p>
+    </div>
+
+    <div class="alert-box">
+      <strong>⚠ Official Website:</strong> All TNPSC exams — <a href="https://www.tnpsc.gov.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">www.tnpsc.gov.in</a> · TRB — <a href="https://trb.tn.gov.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">trb.tn.gov.in</a> · TNUSRB — <a href="https://www.tnusrb.tn.gov.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">www.tnusrb.tn.gov.in</a>. Always verify dates from official sources.
+    </div>
+
+    <div class="exam-grid">
+
+      <!-- TNPSC Group 1 -->
+      <div class="exam-card c-tn">
+        <div class="exam-card-header">
+          <div class="exam-icon i-tn">🏛</div>
+          <div class="exam-title">
+            <div class="exam-short">TNPSC · TN STATE</div>
+            <h3>Group I – Combined Civil Services</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Very High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Posts</div><div class="exam-row-val">Deputy Collector, DSP, Commercial Tax Officer, District Registrar, AO (Treasury), Block Dev. Officer</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Any degree from a recognised university; age limit varies by category and post — verify the TNPSC Group I notification at tnpsc.gov.in; Tamil proficiency required</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-arts">BA</span><span class="tag tag-sci">BSc</span><span class="tag tag-com">BCom</span><span class="tag tag-eng">BE/BTech</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Prelims (Obj 200M) → Mains (Desc 6 papers) → Interview (120M)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Notification</div><div class="exam-row-val">As per TNPSC Annual Planner 2026: Notification 23.06.2026, Prelims 06.09.2026. Verify current schedule annually at tnpsc.gov.in — dates are subject to revision.</div></div>
+          <div class="exam-row"><div class="exam-row-label">Key Subjects</div><div class="exam-row-val">GK, History, Polity, Geography, Economy, Tamil Language, Aptitude, Current Affairs (TN focus)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Focus Areas</div><div class="exam-row-val">Tamil Nadu history, Dravidian movement, TNPSC annual report, state budget, district facts</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.tnpsc.gov.in" target="_blank" rel="noopener noreferrer">tnpsc.gov.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- TNPSC Group 2 -->
+      <div class="exam-card c-tn">
+        <div class="exam-card-header">
+          <div class="exam-icon i-tn">📋</div>
+          <div class="exam-title">
+            <div class="exam-short">TNPSC · TN STATE</div>
+            <h3>Group II – Combined Civil Services II</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Very High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Posts</div><div class="exam-row-val">Sub-Registrar, Asst. Section Officer, Audit Inspector, Revenue Asst., Probation Officer, Labour Inspector</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Any degree; age limit varies by category and post — verify the TNPSC Group II notification at tnpsc.gov.in; Tamil proficiency required</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-arts">BA</span><span class="tag tag-sci">BSc</span><span class="tag tag-com">BCom</span><span class="tag tag-eng">BE/BTech</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Prelims → Mains → Interview (Group IIA: Written + Certificate Verification only)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Notification</div><div class="exam-row-val">As per TNPSC Annual Planner 2026; verify updated schedule annually at tnpsc.gov.in.</div></div>
+          <div class="exam-row"><div class="exam-row-label">Syllabus Focus</div><div class="exam-row-val">GS & Aptitude: 200Q / 200M; Tamil language paper; Economy, Science & Tech, Current Affairs</div></div>
+          <div class="exam-row"><div class="exam-row-label">Salary Range</div><div class="exam-row-val">Pay and allowances are revised periodically according to Central/State Pay Commission rules, service regulations, and recruitment notifications. Verify the current notification before applying.</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.tnpsc.gov.in" target="_blank" rel="noopener noreferrer">tnpsc.gov.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- TNPSC Group 4 -->
+      <div class="exam-card c-tn">
+        <div class="exam-card-header">
+          <div class="exam-icon i-tn">📝</div>
+          <div class="exam-title">
+            <div class="exam-short">TNPSC · TN STATE</div>
+            <h3>Group IV – Junior Asst., Typist, Bill Collector</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Varies by cycle · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Posts</div><div class="exam-row-val">Junior Assistant, Bill Collector, Typist, VAO (Village Administrative Officer)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">10+2 or degree depending on post; age limit varies by category and post — verify the TNPSC Group IV notification at tnpsc.gov.in</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-arts">BA</span><span class="tag tag-sci">BSc</span><span class="tag tag-com">BCom</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Single written exam + Certificate Verification</div></div>
+          <div class="exam-row"><div class="exam-row-label">Notification</div><div class="exam-row-val">As per TNPSC Annual Planner 2026; verify updated schedule annually at tnpsc.gov.in.</div></div>
+          <div class="exam-row"><div class="exam-row-label">Syllabus</div><div class="exam-row-val">100 GS Qs + 100 Tamil Qs (200M Total). Tamil history, science, aptitude, TN facts</div></div>
+          <div class="exam-row"><div class="exam-row-label">Suitable For</div><div class="exam-row-val">First-time aspirants, strong Tamil language background</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.tnpsc.gov.in" target="_blank" rel="noopener noreferrer">tnpsc.gov.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- TNPSC Combined Engg Services -->
+      <div class="exam-card c-tn">
+        <div class="exam-card-header">
+          <div class="exam-icon i-tn">⚙️</div>
+          <div class="exam-title">
+            <div class="exam-short">TNPSC · TN STATE</div>
+            <h3>Combined Engineering Services (CES)</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Very High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Posts</div><div class="exam-row-val">Asst. Engineer (Civil, Mech, EEE, ECE) in PWD, Highways, Irrigation, TNEB, TWAD</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">BE/BTech in relevant discipline; age limit varies by category — verify in TNPSC CES notification</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-eng">BE/BTech</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Written (Engineering + GK) → Interview/Certificate Verification</div></div>
+          <div class="exam-row"><div class="exam-row-label">Syllabus</div><div class="exam-row-val">Engineering core subjects (stream-specific) + GK (Tamil Nadu focus) + Engineering Mathematics</div></div>
+          <div class="exam-row"><div class="exam-row-label">Focus Areas</div><div class="exam-row-val">Subject core concepts, TN Engineering projects, soil mechanics, RCC design, circuits</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.tnpsc.gov.in" target="_blank" rel="noopener noreferrer">tnpsc.gov.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- TRB PG Asst -->
+      <div class="exam-card c-tn">
+        <div class="exam-card-header">
+          <div class="exam-icon i-tn">📚</div>
+          <div class="exam-title">
+            <div class="exam-short">TRB · TN STATE</div>
+            <h3>Teacher Recruitment Board – PG Assistant</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Varies by cycle · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Posts</div><div class="exam-row-val">PG Assistant (subject teacher in Govt HSS): Tamil, English, Maths, Physics, Chemistry, Biology, History, Commerce, CS</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">PG in relevant subject + B.Ed; age limit and relaxations vary — verify in TRB notification at trb.tn.gov.in; Tamil proficiency required</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-arts">BA</span><span class="tag tag-sci">BSc</span><span class="tag tag-com">BCom</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Written test: Paper I (Tamil/English) + Paper II (Subject) → Certificate Verification</div></div>
+          <div class="exam-row"><div class="exam-row-label">Syllabus</div><div class="exam-row-val">Degree + PG level subject content + Teaching Aptitude + Educational Psychology</div></div>
+          <div class="exam-row"><div class="exam-row-label">Salary</div><div class="exam-row-val">Pay and allowances are revised periodically according to Central/State Pay Commission rules, service regulations, and recruitment notifications. Verify the current notification before applying.</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://trb.tn.gov.in" target="_blank" rel="noopener noreferrer">trb.tn.gov.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- TNUSRB SI -->
+      <div class="exam-card c-tn">
+        <div class="exam-card-header">
+          <div class="exam-icon i-tn">🚔</div>
+          <div class="exam-title">
+            <div class="exam-short">TNUSRB · TN STATE</div>
+            <h3>Sub-Inspector of Police Recruitment</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Moderate to High · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Posts</div><div class="exam-row-val">Sub-Inspector of Police (Taluk/Law/Fingerprint), Grade II S.I.</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Any degree; age limit varies by category and post — verify in TNUSRB SI notification at tnusrb.tn.gov.in; Tamil proficiency required</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-arts">BA</span><span class="tag tag-sci">BSc</span><span class="tag tag-com">BCom</span><span class="tag tag-eng">BE/BTech</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Written (GS + Mental Ability) → PET/PMT → Medical → Certificate Verification</div></div>
+          <div class="exam-row"><div class="exam-row-label">Physical</div><div class="exam-row-val">Physical standards vary by category, gender, and recruitment notification; verify TNUSRB official notification carefully. Running, long jump, shot put may be included as notified.</div></div>
+          <div class="exam-row"><div class="exam-row-label">Focus</div><div class="exam-row-val">Indian Constitution, Tamil history, science, mental ability, quantitative aptitude, IPC sections</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.tnusrb.tn.gov.in" target="_blank" rel="noopener noreferrer">tnusrb.tn.gov.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- TNTET -->
+      <div class="exam-card c-tn">
+        <div class="exam-card-header">
+          <div class="exam-icon i-tn">✏️</div>
+          <div class="exam-title">
+            <div class="exam-short">TN TET · TN STATE</div>
+            <h3>Tamil Nadu Teacher Eligibility Test (TNTET)</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Moderate to High · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Papers</div><div class="exam-row-val">Paper I (Classes 1–5): D.El.Ed eligible · Paper II (Classes 6–8): B.Ed eligible</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Paper I: D.El.Ed; Paper II: Degree + B.Ed or Integrated B.Ed; Tamil proficiency</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-arts">BA</span><span class="tag tag-sci">BSc</span><span class="tag tag-com">BCom</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Pattern</div><div class="exam-row-val">150 MCQ / 150 Marks / 2.5 hrs. Qualifying marks and reservation relaxations vary according to TN Government/TRB notification.</div></div>
+          <div class="exam-row"><div class="exam-row-label">Syllabus</div><div class="exam-row-val">Child Development, Tamil, English, Maths/Science/Social Studies (subject-specific), Pedagogy</div></div>
+          <div class="exam-row"><div class="exam-row-label">Validity</div><div class="exam-row-val">Lifetime validity (as per NCTE/CBSE 2021 amendment; verify if TN state has notified any change); Certificate mandatory for govt school appointment</div></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://trb.tn.gov.in" target="_blank" rel="noopener noreferrer">trb.tn.gov.in</a> (primary official source)</div></div>
+        </div>
+      </div>
+
+      <!-- TNPSC Combined Geo Asst -->
+      <div class="exam-card c-tn">
+        <div class="exam-card-header">
+          <div class="exam-icon i-tn">🗺</div>
+          <div class="exam-title">
+            <div class="exam-short">TNPSC · TN STATE</div>
+            <h3>Agricultural / Horticultural / Forest Services</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Varies by cycle · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Posts</div><div class="exam-row-val">Agricultural Officer, Horticultural Officer, Forest Range Officer, Extension Officer</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">BSc Agriculture / Horticulture / Forestry / Botany / Zoology (subject-specific)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-sci">BSc</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Written (GS + Subject) → Interview / Certificate Verification</div></div>
+          <div class="exam-row"><div class="exam-row-label">Focus</div><div class="exam-row-val">TN agriculture statistics, Tamil Nadu forest policy, pest management, crop science, soil science</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.tnpsc.gov.in" target="_blank" rel="noopener noreferrer">tnpsc.gov.in</a></div></div>
+        </div>
+      </div>
+
+    </div><!-- end exam-grid -->
+  </div>
+</div>
+
+<!-- SECTION: ALL INDIA CIVIL -->
+<div class="section" id="ai-civil">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Chapter 03</div>
+      <h2>All India Civil Services</h2>
+      <div class="gold-line"></div>
+      <p>Among the most competitive graduate-level examinations in India — from UPSC Civil Services to SSC CGL. Open to graduates of all streams across India.</p>
+    </div>
+    <div class="exam-grid">
+
+      <!-- UPSC CSE -->
+      <div class="exam-card c-ai">
+        <div class="exam-card-header">
+          <div class="exam-icon i-ai">🏛</div>
+          <div class="exam-title">
+            <div class="exam-short">UPSC · ALL INDIA</div>
+            <h3>Civil Services Examination — IAS / IPS / Indian Foreign Service (IFS) / Central Services</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Very High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Services</div><div class="exam-row-val">IAS, IPS, IRS, Indian Foreign Service (IFS), Central Services Group A & B. Note: Indian Forest Service (IFoS) — Separate from CSE shares the Prelims but is separately recruited — see IFoS card.</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Any degree (any stream); Age 21–32 (Gen) / 21–35 (OBC) / 21–37 (SC/ST). Attempts: Gen/EWS: 6; OBC: 9; SC/ST: unlimited within age limit</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-arts">BA</span><span class="tag tag-sci">BSc</span><span class="tag tag-com">BCom</span><span class="tag tag-eng">BE/BTech</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Prelims: 24.05.2026 → Mains: 21.08.2026 (9 papers, written) → Interview / Personality Test</div></div>
+          <div class="exam-row"><div class="exam-row-label">Key Syllabus</div><div class="exam-row-val">Prelims: GS I + CSAT. Mains: Essay, GS I–IV (History/Geography/Polity/Economy/Ethics/Science), Optional subject (2 papers)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Preparation Focus</div><div class="exam-row-val">NCERT base → Hindu newspaper daily → Yojana/Kurukshetra → PYQs → Optional mastery</div></div>
+          <div class="exam-row"><div class="exam-row-label">Starting Pay</div><div class="exam-row-val">Pay and allowances are revised periodically according to Central/State Pay Commission rules, service regulations, and recruitment notifications. Verify the current notification before applying.</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.upsc.gov.in" target="_blank" rel="noopener noreferrer">upsc.gov.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- UPSC IFS Forest -->
+      <div class="exam-card c-ai">
+        <div class="exam-card-header">
+          <div class="exam-icon i-ai">🌲</div>
+          <div class="exam-title">
+            <div class="exam-short">UPSC · ALL INDIA</div>
+            <h3>Indian Forest Service (IFoS) — Separate from CSE</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">BSc (Botany/Zoology/Chemistry/Physics/Maths/Agriculture/Geology/Statistics) or BE/BTech; age limit and category relaxation as per current UPSC notification</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-sci">BSc</span><span class="tag tag-eng">BE/BTech</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Shared Prelims with CSE: 24.05.2026 → Separate IFoS Mains: 22.11.2026 → Personality Test/Interview</div></div>
+          <div class="exam-row"><div class="exam-row-label">Mains Subjects</div><div class="exam-row-val">General English, General Knowledge + 2 Optional subjects from: Forestry, Botany, Zoology, Chemistry, Agri, Maths, Statistics, Geology, Civil Engg, Agri Engg, Mech Engg, Chemical Engg</div></div>
+          <div class="exam-row"><div class="exam-row-label">Vacancies 2026</div><div class="exam-row-val">Approx. 80 posts; verify in official notification at upsc.gov.in</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.upsc.gov.in" target="_blank" rel="noopener noreferrer">upsc.gov.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- SSC CGL -->
+      <div class="exam-card c-ai">
+        <div class="exam-card-header">
+          <div class="exam-icon i-ai">📊</div>
+          <div class="exam-title">
+            <div class="exam-short">SSC · ALL INDIA</div>
+            <h3>Combined Graduate Level (CGL)</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Posts</div><div class="exam-row-val">Income Tax Inspector, CBI SI, Auditor, Accountant, Statistical Investigator, Asst Enforcement Officer, CSS Asst</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Any Degree; Age 18–32 (post-dependent); Indian National</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-arts">BA</span><span class="tag tag-sci">BSc</span><span class="tag tag-com">BCom</span><span class="tag tag-eng">BE/BTech</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Tier I (CBT: 100Q / 60 min, 4 sections) → Tier II (Paper I compulsory for all; Paper II/III only for specific posts as notified; DEST/CPT skill test where applicable) → Document Verification</div></div>
+          <div class="exam-row"><div class="exam-row-label">Syllabus</div><div class="exam-row-val">Tier I: GI & Reasoning, GK, Quantitative Aptitude, English (25Q each). Tier II Paper I: Maths + Reasoning + English + GA (module-based)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Notification</div><div class="exam-row-val">As per SSC 2026–27 annual calendar; verify current dates at ssc.gov.in before applying</div></div>
+          <div class="exam-row"><div class="exam-row-label">17,000+ Posts</div><div class="exam-row-val">One of India's largest graduate-level central government recruitments; widely attempted by graduates from all academic streams</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer">ssc.gov.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- RRB NTPC -->
+      <div class="exam-card c-ai">
+        <div class="exam-card-header">
+          <div class="exam-icon i-ai">🚂</div>
+          <div class="exam-title">
+            <div class="exam-short">RRB · ALL INDIA</div>
+            <h3>Non-Technical Popular Categories (NTPC)</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Varies by cycle · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Posts</div><div class="exam-row-val">Graduate-level NTPC posts include Station Master, Commercial Apprentice, Goods Guard, Traffic Assistant, Senior Clerk cum Typist, and related categories. Junior Clerk and Accounts Clerk are undergraduate-level categories and should be checked separately.</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Any Degree for Graduate-level posts; Age 18–33 (post-specific)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-arts">BA</span><span class="tag tag-sci">BSc</span><span class="tag tag-com">BCom</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">CBT-1 (Prelims) → CBT-2 (Mains) → Skill Test / Medical → Document Verification</div></div>
+          <div class="exam-row"><div class="exam-row-label">Syllabus</div><div class="exam-row-val">Mathematics, General Intelligence, General Awareness (Indian Railways special focus), English</div></div>
+          <div class="exam-row"><div class="exam-row-label">Vacancies</div><div class="exam-row-val">Vacancies vary significantly by CEN notification and RRB zone; check current CEN at indianrailways.gov.in</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://indianrailways.gov.in" target="_blank" rel="noopener noreferrer">indianrailways.gov.in</a> / <a href="https://rrbchennai.gov.in" target="_blank" rel="noopener noreferrer">rrbchennai.gov.in</a></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: BANKING -->
+<div class="section" id="ai-banking">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Chapter 04</div>
+      <h2>Banking, Finance & Insurance Exams</h2>
+      <div class="gold-line"></div>
+      <p>Banking examinations remain among India's most widely attempted graduate-level recruitment exams, offering structured career pathways in public-sector banking. Candidates from commerce backgrounds may find their degree-level knowledge relevant across multiple exam components.</p>
+    </div>
+    <div class="exam-grid">
+
+      <!-- IBPS PO -->
+      <div class="exam-card c-com">
+        <div class="exam-card-header">
+          <div class="exam-icon i-com">🏦</div>
+          <div class="exam-title">
+            <div class="exam-short">IBPS · ALL INDIA</div>
+            <h3>Probationary Officer (PO) – 11 Public Banks</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Moderate to High · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Banks</div><div class="exam-row-val">Bank of Baroda, PNB, Canara Bank, UCO, Bank of India, Indian Bank, Union Bank + 4 others</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Any recognised degree in any discipline; Age 20–30 (Gen); check individual bank notification for any additional requirements</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-arts">BA</span><span class="tag tag-sci">BSc</span><span class="tag tag-com">BCom</span><span class="tag tag-eng">BE/BTech</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Prelims → Mains → Interview → Provisional Allotment. Dates vary by CRP cycle; verify current IBPS calendar at ibps.in before applying.</div></div>
+          <div class="exam-row"><div class="exam-row-label">Syllabus</div><div class="exam-row-val">Prelims: Reasoning (35Q), QA (35Q), English (30Q). Mains: Reasoning+Comp (45Q), GA/Banking (40Q), English (35Q), Data Analysis (35Q), Desc English</div></div>
+          <div class="exam-row"><div class="exam-row-label">Starting Pay</div><div class="exam-row-val">Pay and allowances are revised periodically according to Central/State Pay Commission rules, service regulations, and recruitment notifications. Verify the current notification before applying.</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.ibps.in" target="_blank" rel="noopener noreferrer">ibps.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- SBI PO -->
+      <div class="exam-card c-com">
+        <div class="exam-card-header">
+          <div class="exam-icon i-com">💰</div>
+          <div class="exam-title">
+            <div class="exam-short">SBI · ALL INDIA</div>
+            <h3>SBI Probationary Officer</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Any degree (any discipline); Age 21–30 (Gen)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-arts">BA</span><span class="tag tag-sci">BSc</span><span class="tag tag-com">BCom</span><span class="tag tag-eng">BE/BTech</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Phase I Prelims → Phase II Mains → Phase III GE & Interview</div></div>
+          <div class="exam-row"><div class="exam-row-label">Unique Feature</div><div class="exam-row-val">Includes psychometric assessment and group exercise components as part of the selection process</div></div>
+          <div class="exam-row"><div class="exam-row-label">Salary</div><div class="exam-row-val">Pay and allowances are revised periodically according to Central/State Pay Commission rules, service regulations, and recruitment notifications. Verify the current notification before applying.</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://bank.sbi/careers" target="_blank" rel="noopener noreferrer">bank.sbi/careers</a></div></div>
+        </div>
+      </div>
+
+      <!-- RBI Grade B -->
+      <div class="exam-card c-com">
+        <div class="exam-card-header">
+          <div class="exam-icon i-com">🏧</div>
+          <div class="exam-title">
+            <div class="exam-short">RBI · ALL INDIA</div>
+            <h3>RBI Grade B Officer (DR) – General</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Very High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Educational qualification and percentage criteria vary by RBI notification and category; verify the current RBI recruitment notification before applying. Economics/Finance background at PG level is advantageous.</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-com">BCom</span><span class="tag tag-arts">BA (Eco)</span><span class="tag tag-sci">BSc</span><span class="tag tag-eng">BE/BTech</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Phase I (Online CBT) → Phase II (Paper I: GA, Paper II: English, Paper III: Finance/Management/Eco) → Interview</div></div>
+          <div class="exam-row"><div class="exam-row-label">Key Focus</div><div class="exam-row-val">Monetary policy, RBI circulars, SEBI/IRDAI regulations, macro/micro economics, banking awareness, Indian economy</div></div>
+          <div class="exam-row"><div class="exam-row-label">Pay Scale</div><div class="exam-row-val">Pay and allowances are revised periodically according to Central/State Pay Commission rules, service regulations, and recruitment notifications. Verify the current notification before applying.</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.rbi.org.in" target="_blank" rel="noopener noreferrer">rbi.org.in → Opportunities</a></div></div>
+        </div>
+      </div>
+
+      <!-- IBPS Clerk -->
+      <div class="exam-card c-com">
+        <div class="exam-card-header">
+          <div class="exam-icon i-com">📑</div>
+          <div class="exam-title">
+            <div class="exam-short">IBPS · ALL INDIA</div>
+            <h3>IBPS Clerk – All 11 Nationalised Banks</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Varies by cycle · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Any degree; Age 20–28 (Gen); Local language proficiency preferred</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-arts">BA</span><span class="tag tag-sci">BSc</span><span class="tag tag-com">BCom</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Prelims (Reasoning 35Q, QA 35Q, English 30Q) → Mains (Reasoning+Computer, English, GA, QA)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Suitable For</div><div class="exam-row-val">A commonly chosen entry point into PSU banking; suitable for candidates seeking a clerical-grade government banking career; postings may include rural and semi-urban branches</div></div>
+          <div class="exam-row"><div class="exam-row-label">Vacancies</div><div class="exam-row-val">Vacancies vary annually by participating banks and recruitment cycle; check current CRP Clerk notification at ibps.in</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.ibps.in" target="_blank" rel="noopener noreferrer">ibps.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- IBPS SO -->
+      <div class="exam-card c-com">
+        <div class="exam-card-header">
+          <div class="exam-icon i-com">🖥</div>
+          <div class="exam-title">
+            <div class="exam-short">IBPS · ALL INDIA</div>
+            <h3>Specialist Officer (SO) – IT / HR / Law / Agriculture</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Varies by cycle · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Specialisations</div><div class="exam-row-val">IT Officer (Scale I), Rajbhasha Adhikari, Law Officer, HR/Personnel Officer, Agriculture Field Officer, Marketing Officer</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Stream-specific degree: IT (BE/BTech CS/IT/Electronics), Law (LLB), Agriculture (BSc Agri), HR (MBA-HR or MSW), etc.</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-sci">BSc (Agri)</span><span class="tag tag-eng">BE/BTech</span><span class="tag tag-arts">LLB</span><span class="tag tag-com">MBA</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Syllabus</div><div class="exam-row-val">Professional Knowledge (stream-specific) + Reasoning + English</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.ibps.in" target="_blank" rel="noopener noreferrer">ibps.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- LIC AAO -->
+      <div class="exam-card c-com">
+        <div class="exam-card-header">
+          <div class="exam-icon i-com">🛡</div>
+          <div class="exam-title">
+            <div class="exam-short">LIC · ALL INDIA</div>
+            <h3>LIC AAO – Assistant Administrative Officer</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Moderate to High · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Specialisations</div><div class="exam-row-val">Generalist, IT, CA, Actuarial, Rajbhasha (General: any degree)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Any degree (for Generalist); Age 21–30 (Gen). BCom / BBA preferred</div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Prelims → Mains → Interview → Medical</div></div>
+          <div class="exam-row"><div class="exam-row-label">Syllabus</div><div class="exam-row-val">Reasoning, Quant, English, Insurance & Financial Marketing Awareness (Mains)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Starting CTC</div><div class="exam-row-val">Pay and allowances are revised periodically according to Central/State Pay Commission rules, service regulations, and recruitment notifications. Verify the current notification before applying.</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.licindia.in" target="_blank" rel="noopener noreferrer">licindia.in → Careers</a></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: ENGINEERING EXAMS -->
+<div class="section" id="ai-eng">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Chapter 05</div>
+      <h2>Engineering & Technical Exams</h2>
+      <div class="gold-line"></div>
+      <p>Exclusively or primarily for BE/BTech graduates — GATE supports postgraduate admissions and selected PSU recruitment; IES/ESE is one of India’s premier central engineering recruitment examinations.</p>
+    </div>
+    <div class="exam-grid">
+
+      <!-- GATE -->
+      <div class="exam-card c-eng">
+        <div class="exam-card-header">
+          <div class="exam-icon" style="background:rgba(40,150,160,0.15);color:#7DE0E8">⚡</div>
+          <div class="exam-title">
+            <div class="exam-short">IITs/IISc · ALL INDIA</div>
+            <h3>GATE – Graduate Aptitude Test in Engineering</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Very High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Purpose</div><div class="exam-row-val">MTech/ME admissions (IITs, NITs, IISc, Anna University) + PSU recruitment (BHEL, ONGC, NTPC, IOCL, PGCIL, etc.)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">BE/BTech/MSc (in relevant discipline) or final year students; No age limit; No attempt limit</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-eng">BE/BTech</span><span class="tag tag-sci">BSc/MSc (selected papers)</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Papers 2026</div><div class="exam-row-val">30 papers: CE, CS, ME, EE, ECE, CH, BT, IN, XE, XL, etc. (Feb 2026, conducted by IIT Guwahati)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Pattern</div><div class="exam-row-val">65Q / 100M / 3hrs. MCQ + MSQ + NAT. General Aptitude 15M + Core Subject 85M. No negative for NAT</div></div>
+          <div class="exam-row"><div class="exam-row-label">Score Validity</div><div class="exam-row-val">3 years; GATE score is used by many PSUs; recruitment depends on each PSU notification</div></div>
+          <div class="exam-row"><div class="exam-row-label">PSU Pay</div><div class="exam-row-val">Pay and allowances are revised periodically according to Central/State Pay Commission rules, service regulations, and recruitment notifications. Verify the current notification before applying.</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://gate2026.iitg.ac.in" target="_blank" rel="noopener noreferrer">gate2026.iitg.ac.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- IES/ESE -->
+      <div class="exam-card c-eng" style="border-top:3px solid #7DE0E8">
+        <div class="exam-card-header">
+          <div class="exam-icon" style="background:rgba(40,150,160,0.15);color:#7DE0E8">🔧</div>
+          <div class="exam-title">
+            <div class="exam-short">UPSC · ALL INDIA</div>
+            <h3>Engineering Services Exam (IES/ESE)</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Very High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Services</div><div class="exam-row-val">Class I Central Engineering Services: IES (Civil, Mech, EEE, Electronics & Telecomm)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">BE/BTech in relevant discipline; age limit varies by category — verify in TNPSC CES notification; Indian national</div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Prelims (Paper I: GS+Engg Aptitude, Paper II: Subject) → Mains (Paper I+II: Technical, Conventional) → Personality Test</div></div>
+          <div class="exam-row"><div class="exam-row-label">Syllabus Focus</div><div class="exam-row-val">Engineering Mathematics, Subject Core (2 papers conventional), Engineering Aptitude</div></div>
+          <div class="exam-row"><div class="exam-row-label">Why Attempt</div><div class="exam-row-val">One of India’s premier central engineering recruitment examinations; postings may include Railways, Defence, CPWD, and other central technical services as notified</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.upsc.gov.in" target="_blank" rel="noopener noreferrer">upsc.gov.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- ISRO -->
+      <div class="exam-card c-eng" style="border-top:3px solid #7DE0E8">
+        <div class="exam-card-header">
+          <div class="exam-icon" style="background:rgba(40,150,160,0.15);color:#7DE0E8">🚀</div>
+          <div class="exam-title">
+            <div class="exam-short">ISRO · ALL INDIA</div>
+            <h3>ISRO Scientist/Engineer – SC</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Very High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Departments</div><div class="exam-row-val">Electronics, Mechanical, Computer Science, Civil, Electrical</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">BE/BTech with 65% marks in relevant discipline; Age up to 35; GATE score accepted in some cycles</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-eng">BE/BTech</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Selection</div><div class="exam-row-val">Written test (Subject + Maths) → Interview. Also via GATE score in some years</div></div>
+          <div class="exam-row"><div class="exam-row-label">Salary</div><div class="exam-row-val">Pay and allowances are revised periodically according to Central/State Pay Commission rules, service regulations, and recruitment notifications. Verify the current notification before applying.</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.isro.gov.in/Careers.html" target="_blank" rel="noopener noreferrer">isro.gov.in/Careers</a></div></div>
+        </div>
+      </div>
+
+      <!-- DRDO RAC & CEPTAM — Split correctly -->
+      <div class="exam-card c-eng" style="border-top:3px solid #7DE0E8">
+        <div class="exam-card-header">
+          <div class="exam-icon" style="background:rgba(40,150,160,0.15);color:#7DE0E8">🛡</div>
+          <div class="exam-title">
+            <div class="exam-short">DRDO · ALL INDIA</div>
+            <h3>DRDO RAC – Scientist 'B' Recruitment</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Very High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Body</div><div class="exam-row-val">Recruitment and Assessment Centre (RAC), DRDO — distinct from CEPTAM. Scientist B is recruited through RAC, not CEPTAM.</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">BE/BTech / MSc in relevant discipline with 60%+; Age up to 28 (Gen). Check current RAC notification for exact criteria</div></div>
+          <div class="exam-row"><div class="exam-row-label">Selection</div><div class="exam-row-val">Written test (Subject + Maths) → Interview by DRDO selection board; GATE score may be considered in some cycles</div></div>
+          <div class="exam-row"><div class="exam-row-label">Suitable For</div><div class="exam-row-val">Research-oriented graduates; areas: VLSI, Aeronautics, Materials Science, Explosives, ECE, CS</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.drdo.gov.in/careers" target="_blank" rel="noopener noreferrer">drdo.gov.in/careers</a> → RAC section</div></div>
+        </div>
+      </div>
+
+      <!-- DRDO CEPTAM Technical Posts -->
+      <div class="exam-card c-eng" style="border-top:3px solid #7DE0E8">
+        <div class="exam-card-header">
+          <div class="exam-icon" style="background:rgba(40,150,160,0.15);color:#7DE0E8">🔩</div>
+          <div class="exam-title">
+            <div class="exam-short">DRDO · ALL INDIA</div>
+            <h3>DRDO CEPTAM – Technical & Admin Posts</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Varies by cycle · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Posts</div><div class="exam-row-val">Technical Assistant (TA-B), Senior Technical Assistant (STA-B), Admin & Allied (AA) — NOT Scientist B</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">TA-B: Diploma/BSc in relevant field; STA-B: BSc/BE/BTech; Age 18–28; verify each CEPTAM notification</div></div>
+          <div class="exam-row"><div class="exam-row-label">Selection</div><div class="exam-row-val">Tier-I CBT (Quant, GI, General Awareness) → Tier-II (Subject-specific written test)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Suitable For</div><div class="exam-row-val">BSc/Diploma holders wanting DRDO entry; stepping stone to technical career in defence labs</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.drdo.gov.in/careers" target="_blank" rel="noopener noreferrer">drdo.gov.in/careers</a> → CEPTAM section</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: SCIENCE PG -->
+<div class="section" id="ai-science">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Chapter 06</div>
+      <h2>Science & Research PG Entrance Exams</h2>
+      <div class="gold-line"></div>
+      <p>For BSc graduates pursuing MSc/PhD at premier institutions — IITs, IISc, TIFR, JNU, Central Universities.</p>
+    </div>
+    <div class="exam-grid">
+
+      <!-- IIT JAM -->
+      <div class="exam-card c-sci">
+        <div class="exam-card-header">
+          <div class="exam-icon i-sci">🔬</div>
+          <div class="exam-title">
+            <div class="exam-short">IITs/IISc · ALL INDIA</div>
+            <h3>IIT JAM – Joint Admission Test for MSc</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Moderate to High · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Purpose</div><div class="exam-row-val">MSc/MSc-PhD and related PG admissions in IITs and participating institutes; verify current JAM admission brochure</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">BSc (any relevant science discipline) with min 55% (Gen); final year students can apply</div></div>
+          <div class="exam-row"><div class="exam-row-label">Papers</div><div class="exam-row-val">BL (Biological Sci), BT (Biotechnology), CY (Chemistry), GG (Geology), MA (Mathematics), MS (Mathematical Statistics), PH (Physics), EP (Economic and Statistics - new)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Pattern</div><div class="exam-row-val">60Q / 100M / 3hrs. Sec A: MCQ (1M+2M) with neg, Sec B: MSQ (2M) no neg, Sec C: NAT (1M+2M) no neg</div></div>
+          <div class="exam-row"><div class="exam-row-label">Exam Month</div><div class="exam-row-val">February (annually); Application: Sept–Oct</div></div>
+          <div class="exam-row"><div class="exam-row-label">Focus</div><div class="exam-row-val">Deep subject understanding (BSc + MSc level theory), problem solving speed, numericaI ability</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://jam.iitm.ac.in" target="_blank" rel="noopener noreferrer">jam.iitm.ac.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- CSIR NET -->
+      <div class="exam-card c-sci">
+        <div class="exam-card-header">
+          <div class="exam-icon i-sci">🧪</div>
+          <div class="exam-title">
+            <div class="exam-short">CSIR-UGC · ALL INDIA</div>
+            <h3>CSIR NET – JRF / Lectureship (Life & Physical Sciences)</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Very High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Subjects</div><div class="exam-row-val">Life Sciences, Chemical Sciences, Physical Sciences, Mathematical Sciences, Earth Sciences</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">MSc/equivalent or eligible integrated degree candidates as per CSIR-NTA notification; age and percentage criteria vary by category and fellowship/lectureship route</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-sci">BSc/MSc</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Pattern</div><div class="exam-row-val">Part A (20Q GS), Part B (50Q Subject), Part C (Analytical, 30Q). Total 200M. Biannual (June/Dec)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Benefits</div><div class="exam-row-val">JRF: ₹37,000/month fellowship. Lectureship: eligibility for Asst Prof in colleges</div></div>
+          <div class="exam-row"><div class="exam-row-label">Focus</div><div class="exam-row-val">High-depth subject mastery, diagram-based questions, critical reasoning in subject context</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://csirhrdg.res.in" target="_blank" rel="noopener noreferrer">csirhrdg.res.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- JEST -->
+      <div class="exam-card c-sci">
+        <div class="exam-card-header">
+          <div class="exam-icon i-sci">⚛</div>
+          <div class="exam-title">
+            <div class="exam-short">DST · ALL INDIA</div>
+            <h3>JEST – Joint Entrance Screening Test (Physics/CS)</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Moderate to High · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Institutes</div><div class="exam-row-val">TIFR, IUCAA, NCBS, JNCASR, IMSc Chennai, HRI, RRI, and 20+ top research institutions</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">BSc/BE/BTech in Physics/CS/MSc Physics; for PhD/Integrated PhD; No age limit</div></div>
+          <div class="exam-row"><div class="exam-row-label">Exam</div><div class="exam-row-val">February (annually); Physics: 50Q/100M; CS: 50Q/100M; Objective + MCQ</div></div>
+          <div class="exam-row"><div class="exam-row-label">Focus</div><div class="exam-row-val">Classical Mechanics, Quantum Mechanics, Statistical Mechanics, Electrodynamics, Mathematical Physics</div></div>
+          <div class="exam-row"><div class="exam-row-label">IMSc Chennai</div><div class="exam-row-val">Institute of Mathematical Sciences, Chennai — accepts JEST; suitable for TN candidates</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.jest.org.in" target="_blank" rel="noopener noreferrer">jest.org.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- GAT-B Biotechnology -->
+      <div class="exam-card c-sci">
+        <div class="exam-card-header">
+          <div class="exam-icon i-sci">🧬</div>
+          <div class="exam-title">
+            <div class="exam-short">DBT-NTA · ALL INDIA</div>
+            <h3>GAT-B – Graduate Aptitude Test in Biotechnology</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Moderate to High · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Purpose</div><div class="exam-row-val">MSc/MTech Biotechnology admission: Anna University Chennai, Alagappa Univ TN, IITs, JNU, BHU, Amity</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">BSc in Life Sciences / Biotechnology / Microbiology / Biochemistry / Zoology / Botany; 55% (Gen)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-sci">BSc (Life Sci)</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Exam</div><div class="exam-row-val">April 2026 (tentative); Application: Feb–March 2026 at dbt.nta.ac.in</div></div>
+          <div class="exam-row"><div class="exam-row-label">Syllabus</div><div class="exam-row-val">Biological Sciences, Chemistry, Mathematics/Statistics, General Aptitude, Analytical Reasoning</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://dbt.nta.ac.in" target="_blank" rel="noopener noreferrer">dbt.nta.ac.in</a></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: TEACHING -->
+<div class="section" id="ai-teaching">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Chapter 07</div>
+      <h2>Teaching & Academic Career Exams</h2>
+      <div class="gold-line"></div>
+      <p>For graduates aspiring to teach in colleges, universities, or schools — nationally recognised qualification pathways.</p>
+    </div>
+    <div class="exam-grid">
+
+      <!-- UGC NET -->
+      <div class="exam-card" style="border-top:3px solid #C9A84C">
+        <div class="exam-card-header">
+          <div class="exam-icon" style="background:rgba(201,168,76,0.15);color:#C9A84C">🎓</div>
+          <div class="exam-title">
+            <div class="exam-short">NTA-UGC · ALL INDIA</div>
+            <h3>UGC NET – National Eligibility Test</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Very High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Purpose</div><div class="exam-row-val">Assistant Professor eligibility + JRF (Junior Research Fellowship) for PhD with stipend</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">PG with 55% (Gen) in relevant subject; final year PG students can apply; Age: no limit for LS; ≤30 for JRF</div></div>
+          <div class="exam-row"><div class="exam-row-label">Subjects</div><div class="exam-row-val">83 subjects: all Humanities, Social Sciences, Commerce, Management, Computer Science, Sciences, Law, Education, Library Science, Yoga, etc.</div></div>
+          <div class="exam-row"><div class="exam-row-label">Pattern</div><div class="exam-row-val">Paper I (Teaching & Research Aptitude, 50Q) + Paper II (Subject, 100Q). 300M total. No negative marking</div></div>
+          <div class="exam-row"><div class="exam-row-label">Frequency</div><div class="exam-row-val">Twice yearly (June & December cycles). Online CBT mode</div></div>
+          <div class="exam-row"><div class="exam-row-label">JRF Benefit</div><div class="exam-row-val">Pay and allowances are revised periodically according to Central/State Pay Commission rules, service regulations, and recruitment notifications. Verify the current notification before applying.</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-arts">BA</span><span class="tag tag-sci">BSc</span><span class="tag tag-com">BCom</span></div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://ugcnet.nta.nic.in" target="_blank" rel="noopener noreferrer">ugcnet.nta.nic.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- SET Tamil Nadu -->
+      <div class="exam-card" style="border-top:3px solid #C9A84C">
+        <div class="exam-card-header">
+          <div class="exam-icon" style="background:rgba(201,168,76,0.15);color:#C9A84C">📖</div>
+          <div class="exam-title">
+            <div class="exam-short">TANCET/SET · TN STATE</div>
+            <h3>State Eligibility Test (SET) Tamil Nadu</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Moderate to High · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Purpose</div><div class="exam-row-val">Assistant Professor in TN state universities and affiliated colleges (equivalent to UGC NET for TN)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">PG with 55% (Gen) / 50% (SC/ST); No age limit</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-arts">BA/MA</span><span class="tag tag-sci">BSc/MSc</span><span class="tag tag-com">BCom/MCom</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Pattern</div><div class="exam-row-val">Paper I: General Paper (50Q) + Paper II: Subject (100Q). Conducting university/agency may change by cycle; verify current TNSET notification</div></div>
+          <div class="exam-row"><div class="exam-row-label">Note</div><div class="exam-row-val">UGC NET qualified candidates are exempt from SET; SET valid only within Tamil Nadu</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.motherteresawomenuniv.ac.in" target="_blank" rel="noopener noreferrer">motherteresawomenuniv.ac.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- CTET -->
+      <div class="exam-card" style="border-top:3px solid #C9A84C">
+        <div class="exam-card-header">
+          <div class="exam-icon" style="background:rgba(201,168,76,0.15);color:#C9A84C">✏️</div>
+          <div class="exam-title">
+            <div class="exam-short">CBSE-CTET · ALL INDIA</div>
+            <h3>CTET – Central Teacher Eligibility Test</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Moderate to High · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Purpose</div><div class="exam-row-val">Teaching eligibility for KVS, NVS, Army Schools, DSSSB (central govt schools)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Paper I: D.El.Ed. Paper II: Degree + B.Ed or equivalent; No age limit</div></div>
+          <div class="exam-row"><div class="exam-row-label">Pattern</div><div class="exam-row-val">150 MCQ / 150M. Paper I (Primary 1–5); Paper II (Upper Primary 6–8). Min 60% to qualify</div></div>
+          <div class="exam-row"><div class="exam-row-label">Frequency</div><div class="exam-row-val">2–3 times per year; Lifetime validity (amended 2022)</div></div>
+          <div class="exam-row"><div class="exam-row-label">Syllabus</div><div class="exam-row-val">Child Development & Pedagogy, Language I & II, Subject Paper (Maths/Science or Social Studies)</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://ctet.nic.in" target="_blank" rel="noopener noreferrer">ctet.nic.in</a></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: DEFENCE -->
+<div class="section" id="ai-defence">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Chapter 08</div>
+      <h2>Defence & Uniformed Services</h2>
+      <div class="gold-line"></div>
+      <p>For graduates seeking a career in the armed forces, paramilitary, or intelligence services — requiring physical fitness alongside academic merit.</p>
+    </div>
+    <div class="exam-grid">
+
+      <!-- CDS -->
+      <div class="exam-card c-def" style="border-top:3px solid #8B6914">
+        <div class="exam-card-header">
+          <div class="exam-icon i-def">🪖</div>
+          <div class="exam-title">
+            <div class="exam-short">UPSC · ALL INDIA</div>
+            <h3>CDS – Combined Defence Services</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Entry Into</div><div class="exam-row-val">IMA (Army), OTA Chennai, INA (Navy), AFA (Air Force), SSC Officer</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">IMA/OTA: any degree; INA: engineering degree; AFA: degree with Physics & Maths at 10+2 level or BE/BTech; Age 19–24 (IMA), 19–25 (OTA); Males only for IMA/INA/AFA; Females for OTA</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-arts">BA</span><span class="tag tag-sci">BSc</span><span class="tag tag-com">BCom</span><span class="tag tag-eng">BE/BTech</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">Written (English, GK, Maths) → SSB Interview (5 days: GTO, Psych, Interview, Conf) → Medical</div></div>
+          <div class="exam-row"><div class="exam-row-label">Frequency</div><div class="exam-row-val">Twice a year (Feb & Sep); OTA Chennai is southern India's premier training academy</div></div>
+          <div class="exam-row"><div class="exam-row-label">SSB Note</div><div class="exam-row-val">Service Selection Board (SSB) tests Officer Like Qualities (OLQ) — personality, leadership, teamwork</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://www.upsc.gov.in" target="_blank" rel="noopener noreferrer">upsc.gov.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- AFCAT -->
+      <div class="exam-card c-def" style="border-top:3px solid #8B6914">
+        <div class="exam-card-header">
+          <div class="exam-icon i-def">✈️</div>
+          <div class="exam-title">
+            <div class="exam-short">IAF · ALL INDIA</div>
+            <h3>AFCAT – Air Force Common Admission Test</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Branches</div><div class="exam-row-val">Flying Branch, Ground Duty (Technical), Ground Duty (Non-Technical), NCC Special Entry</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Flying: Any degree (min 60%); Technical: BE/BTech (Mech/Elec/ECE/Aerospace/CS); Flying Branch: usually 20–24 years; Ground Duty branches: usually 20–26 years, as per notification</div></div>
+          <div class="exam-row"><div class="exam-row-label">Stages</div><div class="exam-row-val">AFCAT Written (Verbal Ability, Numerical, Reasoning, Military Aptitude) → AFSB (3 days) → Medical</div></div>
+          <div class="exam-row"><div class="exam-row-label">Frequency</div><div class="exam-row-val">Twice a year (Feb & Aug). Online CBT mode. Duration: 2 hours</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://afcat.cdac.in" target="_blank" rel="noopener noreferrer">afcat.cdac.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- NCC Special Entry -->
+      <div class="exam-card c-def" style="border-top:3px solid #8B6914">
+        <div class="exam-card-header">
+          <div class="exam-icon i-def">🎖</div>
+          <div class="exam-title">
+            <div class="exam-short">ARMY/NAVY/IAF · ALL INDIA</div>
+            <h3>NCC Special Entry / Short Service Commission</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> Varies by cycle · <span>Difficulty:</span> ★★★☆☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Any degree graduate with NCC 'C' Certificate (Army/Navy/Air Wing); No written exam — direct SSB</div></div>
+          <div class="exam-row"><div class="exam-row-label">Streams OK</div><div class="exam-row-val"><span class="tag tag-arts">BA</span><span class="tag tag-sci">BSc</span><span class="tag tag-com">BCom</span><span class="tag tag-eng">BE/BTech</span></div></div>
+          <div class="exam-row"><div class="exam-row-label">Advantage</div><div class="exam-row-val">Direct entry pathway to commissioned officer selection through NCC Special Entry; NCC 'C' certificate holders may be exempted from written test as per notification</div></div>
+          <div class="exam-row"><div class="exam-row-label">Tip</div><div class="exam-row-val">Join NCC in college (Army/Air/Naval wing); aim for 'C' certificate — a useful career credential</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://joinindianarmy.nic.in" target="_blank" rel="noopener noreferrer">joinindianarmy.nic.in</a></div></div>
+        </div>
+      </div>
+
+      <!-- INET / Indian Navy Officer Entry -->
+      <div class="exam-card c-def" style="border-top:3px solid #8B6914">
+        <div class="exam-card-header">
+          <div class="exam-icon i-def">⚓</div>
+          <div class="exam-title">
+            <div class="exam-short">INDIAN NAVY · ALL INDIA</div>
+            <h3>Indian Navy Officer Entry (SSC / PC)</h3>
+          </div>
+        </div>
+        <div class="exam-meta"><span>Competition:</span> High · <span>Difficulty:</span> ★★★★☆</div>
+        <div class="exam-body">
+          <div class="exam-row"><div class="exam-row-label">⚠ Note</div><div class="exam-row-val">Indian Navy recruitment routes change periodically. The earlier INET (Indian Navy Entrance Test) format has undergone revisions; current entry may be through INCET or direct SSC officer notification. Always verify the current route at joinindiannavy.gov.in before applying.</div></div>
+          <div class="exam-row"><div class="exam-row-label">Branches</div><div class="exam-row-val">Executive (Pilot, Observer, ATC, General Service), Technical (Engineering, Electrical), Education Officer</div></div>
+          <div class="exam-row"><div class="exam-row-label">Eligibility</div><div class="exam-row-val">Branch-specific degree requirements apply; BE/BTech for technical branches; age usually varies by branch and notification — verify current Indian Navy SSC/PC entry notice</div></div>
+          <div class="exam-row"><div class="exam-row-label">Selection</div><div class="exam-row-val">Written/online test → SSB Interview (5 days: GTO, Psych, Interview) → Medical Examination</div></div>
+          <div class="exam-row"><div class="exam-row-label">Syllabus</div><div class="exam-row-val">English, Reasoning, Numerical Ability, General Science, Mathematical Aptitude, General Knowledge</div></div>
+          <div class="divider"></div>
+          <div class="exam-row"><div class="exam-row-label">Website</div><div class="exam-row-val"><a href="https://joinindiannavy.gov.in" target="_blank" rel="noopener noreferrer">joinindiannavy.gov.in</a> (verify current recruitment notification)</div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: EXAM CALENDAR -->
+<div class="section" id="calendar">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Chapter 09</div>
+      <h2>Annual Exam Calendar 2026</h2>
+      <div class="gold-line"></div>
+      <p>Plan your preparation year strategically. Multiple exams can be attempted simultaneously with overlapping syllabi.</p>
+    </div>
+
+    <div class="month-grid">
+      <div class="month-box">
+        <div class="month-hdr">January – February</div>
+        <div class="month-body">
+          <div class="month-item"><div class="month-dot"></div><div>GATE 2026 (Feb) — BE/BTech</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>IIT JAM (Feb) — BSc</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>JEST (Feb) — BSc Physics/CS</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>UPSC IFS Notification (Feb)</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>AFCAT (Feb cycle) — Any Degree</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>IBPS SO Result (Jan)</div></div>
+        </div>
+      </div>
+      <div class="month-box">
+        <div class="month-hdr">March – April</div>
+        <div class="month-body">
+          <div class="month-item"><div class="month-dot"></div><div>SSC CGL notification: verify current SSC calendar at ssc.gov.in</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>TNPSC Group I: verify current TNPSC Annual Planner</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>GAT-B Biotechnology (Apr)</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>CDS I Result Declared</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>UGC NET Application (Apr)</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>IBPS PO Notification</div></div>
+        </div>
+      </div>
+      <div class="month-box">
+        <div class="month-hdr">May – June</div>
+        <div class="month-body">
+          <div class="month-item"><div class="month-dot"></div><div>UPSC Prelims (May 24, 2026)</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>IFS Prelims (May 24, 2026)</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>UGC NET (June cycle)</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>CSIR NET (June)</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>TANCET PG Entrance</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>RRB NTPC Mains</div></div>
+        </div>
+      </div>
+      <div class="month-box">
+        <div class="month-hdr">July – August</div>
+        <div class="month-body">
+          <div class="month-item"><div class="month-dot"></div><div>TNPSC Group II: verify current TNPSC Annual Planner</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>IBPS PO: verify current IBPS calendar</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>SBI PO: verify current SBI careers notification</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>AFCAT 2 (Aug cycle)</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>SSC CGL Tier I: verify current SSC calendar</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>UPSC Mains (Aug 21)</div></div>
+        </div>
+      </div>
+      <div class="month-box">
+        <div class="month-hdr">September – October</div>
+        <div class="month-body">
+          <div class="month-item"><div class="month-dot"></div><div>TNPSC Group I Prelims: verify current TNPSC Annual Planner</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>TNPSC Group II Exam: verify current TNPSC Annual Planner</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>TNPSC Group IV: verify current TNPSC Annual Planner</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>CDS II Exam (Sep)</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>IBPS PO Mains: verify current IBPS calendar</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>LIC AAO / ADO Notification</div></div>
+        </div>
+      </div>
+      <div class="month-box">
+        <div class="month-hdr">November – December</div>
+        <div class="month-body">
+          <div class="month-item"><div class="month-dot"></div><div>IFS Mains (Nov 22, 2026)</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>CSIR NET (Dec)</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>UGC NET (Dec cycle)</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>TNPSC Group IV Exam: verify current TNPSC Annual Planner</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>IBPS Clerk Mains (Dec)</div></div>
+          <div class="month-item"><div class="month-dot"></div><div>GATE 2027 Application opens</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: STRATEGY MATRIX -->
+<div class="section" id="strategy">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Chapter 10</div>
+      <h2>Degree-wise Strategy Matrix</h2>
+      <div class="gold-line"></div>
+      <p>Which exams suit your degree best? This matrix shows primary matches, secondary options, and unique edges each stream offers.</p>
+    </div>
+    <div style="overflow-x:auto">
+    <table class="strategy-table">
+      <thead>
+        <tr>
+          <th>Degree</th>
+          <th>Top 3 Exams to Target</th>
+          <th>Secondary Options</th>
+          <th>Your Natural Edge</th>
+          <th>Common Overlap</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>BSc<br>(Science)</strong></td>
+          <td>IIT JAM, CSIR NET, TNPSC Group 1/2</td>
+          <td>GATE (BT/XE), UPSC IFS, GAT-B, JEST, UGC NET</td>
+          <td>Analytical reasoning, Science GS sections, Data Interpretation</td>
+          <td>Quantitative sections in GATE, JAM, CSIR share deep overlap</td>
+        </tr>
+        <tr>
+          <td><strong>BA<br>(Arts/Humanities)</strong></td>
+          <td>UPSC CSE, TNPSC Group 1, UGC NET</td>
+          <td>SSC CGL, IBPS PO/Clerk, CDS (OTA), RRB NTPC, SET</td>
+          <td>Essay writing, language skills, History/Polity/Geography GS sections</td>
+          <td>GS Paper I (History, Geography, Polity) — appears in UPSC, TNPSC, SSC</td>
+        </tr>
+        <tr>
+          <td><strong>BCom<br>(Commerce)</strong></td>
+          <td>IBPS PO, RBI Grade B, SSC CGL (Taxation/Accounts)</td>
+          <td>SBI PO, LIC AAO, IBPS Clerk, IBPS SO (Finance), CA foundation pathway</td>
+          <td>Quantitative Aptitude, Accounting, Finance, Taxation sections</td>
+          <td>Quant + Reasoning appears in every banking exam; Economics in RBI/UPSC</td>
+        </tr>
+        <tr>
+          <td><strong>BE/BTech<br>(Engineering)</strong></td>
+          <td>GATE, IES/ESE, ISRO Scientist</td>
+          <td>DRDO CEPTAM, AFCAT (Technical), SSC CGL, UPSC CSE, IBPS SO (IT)</td>
+          <td>Problem solving, Maths, Quantitative Aptitude, Science/Tech GS sections</td>
+          <td>Engineering Maths shared between GATE + IES; Aptitude common to all</td>
+        </tr>
+        <tr>
+          <td><strong>All Streams</strong></td>
+          <td>UPSC CSE, SSC CGL, TNPSC Group 2</td>
+          <td>CDS, RRB NTPC, CTET/TNTET, IBPS Clerk, TNUSRB SI</td>
+          <td>GK, Current Affairs, Tamil (for TN exams), English — stream-neutral</td>
+          <td>GK + Reasoning + English — universal syllabus across 80% of exams</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: PREPARATION TIPS -->
+<div class="section" id="tips">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Chapter 11</div>
+      <h2>Preparation Secrets of Toppers</h2>
+      <div class="gold-line"></div>
+      <p>Consistent performance in competitive examinations depends on syllabus awareness, structured practice, revision discipline, and careful selection of preparation resources.</p>
+    </div>
+    <div class="tips-grid">
+      <div class="tip-card">
+        <div class="tip-number">01</div>
+        <h4>The PYQ Rule</h4>
+        <p>Solve the last 10 years' question papers before any other material. 60–70% of questions are concept-repeated. PYQs tell you exactly what to study — and what to skip.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-number">02</div>
+        <h4>Syllabus First, Always</h4>
+        <p>Print the official syllabus. Highlight every topic. Study only what's on the syllabus. Most aspirants waste months on topics that never appear. Boundaries matter.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-number">03</div>
+        <h4>The Overlap Method</h4>
+        <p>Choose 2–3 exams with overlapping syllabi (e.g., TNPSC Group 2 + SSC CGL + IBPS PO). One hour of study prepares you for three exams simultaneously. Maximum ROI.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-number">04</div>
+        <h4>The Newspaper Habit</h4>
+        <p>For UPSC/TNPSC: Read The Hindu or Indian Express daily. Focus on editorial, national policy, and Tamil Nadu governance. 20 minutes/day for one year builds a strong current-affairs base.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-number">05</div>
+        <h4>Revision Beats Reading</h4>
+        <p>Single reading has poor retention; repeated revision substantially improves recall. Make short notes. Revise everything you've read within 24 hours, 1 week, and 1 month. Spaced repetition wins.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-number">06</div>
+        <h4>Mock Tests Are Mandatory</h4>
+        <p>Attempt minimum 2 full-length mock tests per week in exam conditions. Analyse every wrong answer. Pattern recognition in mocks translates directly to exam performance.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-number">07</div>
+        <h4>Tamil Medium Advantage (TNPSC)</h4>
+        <p>For TNPSC, studying in Tamil medium gives a psychological and speed advantage. Tamil literature and classical Tamil knowledge in the language paper is high-yield: invest time here.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-number">08</div>
+        <h4>Health = Performance</h4>
+        <p>Sleep 7 hours. Walk 30 minutes. The brain consolidates memory during sleep. Most toppers protect sleep like study time. Physical health is the hidden variable in exam success.</p>
+      </div>
+      <div class="tip-card">
+        <div class="tip-number">09</div>
+        <h4>The 1000-Day Principle</h4>
+        <p>UPSC/IES/GATE aspirants generally require sustained, high-quality preparation over many months. That's 3 hours/day for 1 year. The compound effect of consistent daily effort beats intensive crashing every time.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SECTION: RESOURCES -->
+<div class="section" id="resources">
+  <div class="container">
+    <div class="section-head">
+      <div class="section-eyebrow">Chapter 12</div>
+      <h2>Essential Resources & Quick Reference</h2>
+      <div class="gold-line"></div>
+      <p>Curated official links, recommended books, and strategic resources — vetted for 2026 relevance.</p>
+    </div>
+
+    <div class="intro-grid" style="margin-bottom:32px">
+      <div class="intro-card">
+        <h3>🔗 Official Exam Portals</h3>
+        <ul>
+          <li><a href="https://www.tnpsc.gov.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">tnpsc.gov.in</a> — TNPSC all groups</li>
+          <li><a href="https://trb.tn.gov.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">trb.tn.gov.in</a> — TN Teacher Recruitment</li>
+          <li><a href="https://www.upsc.gov.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">upsc.gov.in</a> — UPSC all exams</li>
+          <li><a href="https://ssc.gov.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">ssc.gov.in</a> — SSC CGL/CHSL/GD</li>
+          <li><a href="https://www.ibps.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">ibps.in</a> — Banking (PO/Clerk/SO/RRB)</li>
+          <li><a href="https://bank.sbi/careers" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">bank.sbi/careers</a> — SBI PO/Clerk</li>
+          <li><a href="https://www.rbi.org.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">rbi.org.in</a> — RBI Grade B/Assistant</li>
+          <li><a href="https://ugcnet.nta.nic.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">ugcnet.nta.nic.in</a> — UGC NET</li>
+          <li><a href="https://jam.iitm.ac.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">jam.iitm.ac.in</a> — IIT JAM</li>
+          <li><a href="https://gate2026.iitg.ac.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">gate2026.iitg.ac.in</a> — GATE 2026</li>
+          <li><a href="https://csirhrdg.res.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">csirhrdg.res.in</a> — CSIR NET</li>
+          <li><a href="https://dbt.nta.ac.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">dbt.nta.ac.in</a> — GAT-B Biotechnology</li>
+          <li><a href="https://www.jest.org.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">jest.org.in</a> — JEST Physics</li>
+          <li><a href="https://afcat.cdac.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">afcat.cdac.in</a> — Air Force AFCAT</li>
+          <li><a href="https://www.isro.gov.in/Careers.html" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">isro.gov.in/Careers</a> — ISRO</li>
+        </ul>
+      </div>
+      <div class="intro-card">
+        <h3>📘 Recommended Standard Books</h3>
+        <ul>
+          <li><strong>GK/GS:</strong> Lucent's General Knowledge (all exams)</li>
+          <li><strong>Indian Polity:</strong> M. Laxmikanth — Indian Polity</li>
+          <li><strong>History:</strong> Bipin Chandra (Modern), Satish Chandra (Medieval)</li>
+          <li><strong>Geography:</strong> NCERT XI, XII + Majid Husain</li>
+          <li><strong>Economy:</strong> Ramesh Singh — Indian Economy</li>
+          <li><strong>Tamil GK (TNPSC):</strong> Samacheer Kalvi 6–10 textbooks</li>
+          <li><strong>Tamil Language:</strong> Urai Nool (உரை நூல்) by Kalvi Nilayam</li>
+          <li><strong>Reasoning:</strong> RS Aggarwal — Verbal & Non-Verbal Reasoning</li>
+          <li><strong>Quant:</strong> RS Aggarwal (banking), Arun Sharma (CAT/CGL)</li>
+          <li><strong>English:</strong> Word Power Made Easy (Norman Lewis)</li>
+          <li><strong>GATE:</strong> Made Easy / ACE publications (stream-specific)</li>
+          <li><strong>IIT JAM:</strong> Arihant series (subject-specific)</li>
+          <li><strong>CSIR NET:</strong> Trueman's Biology (Life Sci)</li>
+          <li><strong>UPSC Ethics:</strong> Lexicon by Chronicle Publications</li>
+        </ul>
+      </div>
+      <div class="intro-card">
+        <h3>📱 Best Free Digital Resources</h3>
+        <ul>
+          <li><strong>NCERT Books:</strong> ncert.nic.in (Classes 6–12 — foundation for UPSC/TNPSC)</li>
+          <li><strong>TNPSC Study Material:</strong> TNPSC official portal + Tamil medium PDFs</li>
+          <li><strong>Unacademy / PW / BYJU's IAS:</strong> Free live classes on YouTube</li>
+          <li><strong>Vision IAS Monthly Current Affairs:</strong> Free PDF (UPSC focused)</li>
+          <li><strong>The Hindu Archives:</strong> thehindu.com (subscriber access recommended)</li>
+          <li><strong>Mrunal.org:</strong> Economy and optional subjects (free, excellent)</li>
+          <li><strong>IndiaBIX.com:</strong> Practice MCQs for all exams</li>
+          <li><strong>Testbook / Gradeup:</strong> Free mock tests for banking/SSC</li>
+          <li><strong>ClearIAS.com:</strong> UPSC practice and notes</li>
+          <li><strong>NPTEL (IIT Online Courses):</strong> nptel.ac.in — Free for GATE prep</li>
+        </ul>
+      </div>
+      <div class="intro-card">
+        <h3>🧭 Things Most Guides Miss</h3>
+        <ul>
+          <li><strong>EPFO EO/AO:</strong> UPSC-conducted exam for BCom/BA — structured central-government service pathway</li>
+          <li><strong>CAG Auditor:</strong> SSC exam, suitable for BCom — overlooked but stable career</li>
+          <li><strong>TNPSC Group 3 (Direct Recruitment):</strong> Rarely notified but available</li>
+          <li><strong>TANCET MBA:</strong> For BCom/BA wanting management entry</li>
+          <li><strong>NABARD Development Asst:</strong> Rural banking, suitable for BSc Agri/BCom</li>
+          <li><strong>NVS/KVS TGT/PGT:</strong> Central school teacher — high job security</li>
+          <li><strong>SEBI Grade A:</strong> Securities regulator — suitable for BCom/Economics</li>
+          <li><strong>SIDBI/NHB/EXIM Bank:</strong> Specialist officer exams — different competition profile</li>
+          <li><strong>CIL (Coal India) MT:</strong> GATE-based recruitment with 350+ MT vacancies</li>
+          <li><strong>BSNL JTO/JAO:</strong> Telecom dept, BE/BTech + BCom stream available</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Hidden Gems section -->
+    <div style="background:rgba(201,168,76,0.06);border:1px solid var(--line);border-radius:4px;padding:32px;margin-top:8px">
+      <h3 style="font-family:'Playfair Display',serif;color:var(--gold);font-size:1.3rem;margin-bottom:20px">⭐ Hidden & Underrated Exam Opportunities</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px">
+        <div>
+          <h4 style="color:#fff;font-size:0.88rem;margin-bottom:8px">EPFO Enforcement Officer / Accounts Officer</h4>
+          <p style="color:rgba(250,246,238,0.65);font-size:0.8rem">Conducted by UPSC. Offers a structured government service pathway. Suitable for BCom and BA Economics candidates. Syllabus overlaps significantly with SSC CGL and UPSC Prelims. Website: <a href="https://www.upsc.gov.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">upsc.gov.in</a></p>
+        </div>
+        <div>
+          <h4 style="color:#fff;font-size:0.88rem;margin-bottom:8px">SEBI Grade A Officer</h4>
+          <p style="color:rgba(250,246,238,0.65);font-size:0.8rem">Securities & Exchange Board of India. Any graduate, but economics/finance knowledge is critical. Lesser competition than banking. Website: <a href="https://www.sebi.gov.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">sebi.gov.in</a></p>
+        </div>
+        <div>
+          <h4 style="color:#fff;font-size:0.88rem;margin-bottom:8px">NABARD Development Asst / Grade A</h4>
+          <p style="color:rgba(250,246,238,0.65);font-size:0.8rem">Rural development banking. Any degree (Asst); Economics/Agriculture PG preferred (Grade A). Website: <a href="https://www.nabard.org" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">nabard.org</a></p>
+        </div>
+        <div>
+          <h4 style="color:#fff;font-size:0.88rem;margin-bottom:8px">NVS/KVS PGT/TGT</h4>
+          <p style="color:rgba(250,246,238,0.65);font-size:0.8rem">Navodaya/Kendriya Vidyalaya teacher recruitment. Central pay scale, good postings. Any grad+B.Ed. Website: <a href="https://navodaya.gov.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">navodaya.gov.in</a></p>
+        </div>
+        <div>
+          <h4 style="color:#fff;font-size:0.88rem;margin-bottom:8px">ICAR AIEEA (BSc Agri)</h4>
+          <p style="color:rgba(250,246,238,0.65);font-size:0.8rem">Indian Council of Agricultural Research PG entrance. For BSc Agriculture, Horticulture, Fisheries. Website: <a href="https://icar.nta.nic.in" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">icar.nta.nic.in</a></p>
+        </div>
+        <div>
+          <h4 style="color:#fff;font-size:0.88rem;margin-bottom:8px">TANCET PG (Anna University)</h4>
+          <p style="color:rgba(250,246,238,0.65);font-size:0.8rem">Tamil Nadu Common Entrance Test for ME/MTech/MBA/MCA. For BE/BTech and BCom/BA pursuing PG in TN. Website: <a href="https://www.annauniv.edu" target="_blank" rel="noopener noreferrer" style="color:#6bb3f7">annauniv.edu</a></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-title">Competitive Exam Compass — Graduate Edition 2026</div>
+  <p style="color:rgba(240,128,96,0.85);font-size:0.82rem;margin-bottom:6px">⚠ Preliminary Guidance Draft · Verify All Details From Official Notifications Before Applying</p>
+  <p>Prepared by R. Ramesh · Department of Zoology, Government Arts & Science College, Nagercoil, Tamil Nadu</p>
+  <p>A comprehensive reference guide for graduates navigating career pathways through competitive examinations.</p>
+
+  <p style="color:rgba(250,246,238,0.48);font-size:0.76rem;margin-top:10px">
+    TNPSC details verified: May 2026 · UPSC details verified: May 2026 · SSC details verified: May 2026 · Banking details verified: May 2026
+  </p>
+  <div class="disclaimer">
+    <strong>Disclaimer:</strong> All exam dates, eligibility criteria, syllabi, salary figures, and application details are subject to change based on official notifications. This guide is compiled from information available as of May 2026 and is intended as a starting-point reference only. Salary and pay-scale data may be outdated — always verify current figures from official pay commission orders or recruitment notifications. Candidates should verify all information from the respective official websites before applying. This guide is intended for educational and guidance purposes only.<br><br>
+    <strong>Tamil Nadu Eligibility:</strong> Reservation benefits (BC/MBC/SC/ST/EWS) and Tamil language eligibility rules vary by post and notification — always read the specific TNPSC/TRB/TNUSRB notification carefully. Creamy Layer norms apply for BC/MBC OBC reservations in Central exams.<br><br>
+    <strong>DRDO Note:</strong> Scientist 'B' posts are recruited through RAC (Recruitment and Assessment Centre), not CEPTAM. CEPTAM handles technical/administrative/allied posts. Always check drdo.gov.in/careers for the current active recruitment route.<br><br>
+    © 2026 R. Ramesh · GASC Nagercoil · Department of Zoology
+  </div>
+</footer>
+
+<button class="scroll-top" aria-label="Scroll to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+function scrollToSection(e, id) {
+  const el = document.getElementById(id);
+  if(el) {
+    const offset = 55;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+    window.scrollTo({top, behavior:'smooth'});
+  }
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  if(e && e.target) e.target.classList.add('active');
+}
+
+// highlight nav on scroll
+const sections = ['intro','tn-exams','ai-civil','ai-banking','ai-eng','ai-science','ai-teaching','ai-defence','calendar','strategy','tips','resources'];
+const navBtns = document.querySelectorAll('.nav-btn');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if(el && window.scrollY >= el.offsetTop - 100) current = id;
+  });
+  navBtns.forEach((btn, i) => {
+    btn.classList.toggle('active', sections[i] === current);
+  });
+});
+
+// Lightweight exam search and quick filters
+const examSearch = document.getElementById('examSearch');
+const filterChips = document.querySelectorAll('.filter-chip');
+let activeExamFilter = 'all';
+
+function hasToken(text, token) {
+  return new RegExp('(^|[^a-z0-9])' + token + '([^a-z0-9]|$)', 'i').test(text);
+}
+
+function cardMatchesFilter(card, filter) {
+  const text = card.textContent.toLowerCase();
+  const section = card.closest('.section');
+  const sectionId = section ? section.id : '';
+  if (filter === 'all') return true;
+  if (filter === 'ba') return hasToken(text, 'ba');
+  if (filter === 'bsc') return hasToken(text, 'bsc');
+  if (filter === 'bcom') return hasToken(text, 'bcom');
+  if (filter === 'be-btech') return text.includes('be/btech') || text.includes('be / btech') || hasToken(text, 'btech');
+  if (filter === 'tamil-nadu') return sectionId === 'tn-exams';
+  if (filter === 'all-india') return ['ai-civil','ai-banking','ai-eng','ai-science','ai-teaching','ai-defence'].includes(sectionId);
+  if (filter === 'banking') return sectionId === 'ai-banking';
+  if (filter === 'engineering') return sectionId === 'ai-eng';
+  if (filter === 'defence') return sectionId === 'ai-defence';
+  if (filter === 'teaching') return sectionId === 'ai-teaching';
+  return true;
+}
+
+function applyExamFilters() {
+  const query = (examSearch?.value || '').trim().toLowerCase();
+  document.querySelectorAll('.exam-grid').forEach(grid => {
+    let visibleCount = 0;
+    grid.querySelectorAll('.exam-card').forEach(card => {
+      const text = card.textContent.toLowerCase();
+      const matchesSearch = !query || text.includes(query);
+      const matchesQuickFilter = cardMatchesFilter(card, activeExamFilter);
+      const show = matchesSearch && matchesQuickFilter;
+      card.style.display = show ? '' : 'none';
+      if (show) visibleCount++;
+    });
+    let empty = grid.parentElement.querySelector('.no-results');
+    if (!empty) {
+      empty = document.createElement('div');
+      empty.className = 'no-results';
+      empty.textContent = 'No matching exams found for the current search/filter.';
+      grid.parentElement.appendChild(empty);
+    }
+    empty.style.display = visibleCount === 0 ? 'block' : 'none';
+  });
+}
+
+if (examSearch) examSearch.addEventListener('input', applyExamFilters);
+filterChips.forEach(chip => {
+  chip.addEventListener('click', () => {
+    filterChips.forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    activeExamFilter = chip.dataset.filter || 'all';
+    applyExamFilters();
+  });
+});
+
+</script>
+</body>
+</html>
